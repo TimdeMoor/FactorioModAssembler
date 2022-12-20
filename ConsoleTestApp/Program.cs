@@ -23,7 +23,7 @@ namespace ConsoleTestApp
             //builder.BuildItems();
             //builder.BuildTechnology();
 
-
+            
             Console.WriteLine($"Writing {fileName + fileExtension} to {testPath} ");
             Console.WriteLine(item.ToString());
 

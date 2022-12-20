@@ -25,18 +25,18 @@ namespace ModAssemblerLib.DataClasses
         }
 
         public static readonly Dictionary<Folder, string> Folders = new Dictionary<Folder, string>() {
-            {Folder.Graphics, "graphics"},
-            {Folder.GraphicsIcons, Folders.GetValueOrDefault(Folder.Graphics) + "\\" + "icons"},
-            {Folder.GraphicsEnities, Folders.GetValueOrDefault(Folder.Graphics) + "\\" + "entities"},
-            {Folder.GraphicsTechnologies, Folders.GetValueOrDefault (Folder.Graphics) + "\\" + "technology"},
-            {Folder.Locale, "locale"},
-            {Folder.Migrations, "migrations"},
-            {Folder.Prototypes, "prototypes"},
-            {Folder.PrototypesItems, Folders.GetValueOrDefault(Folder.Prototypes) + "\\" + "items"},
-            {Folder.PrototypesEntities, Folders.GetValueOrDefault(Folder.Prototypes) + "\\" + "entities"},
-            {Folder.PrototypesTechnologies, Folders.GetValueOrDefault(Folder.Prototypes) + "\\" + "technologies"},
-            {Folder.PrototypesFluids, Folders.GetValueOrDefault(Folder.Prototypes) + "\\" + "fluids"},
-            {Folder.PrototypesRecipes, Folders.GetValueOrDefault(Folder.Prototypes) + "\\" + "recipes"},
+            {Folder.Graphics,               "graphics"},
+            {Folder.GraphicsIcons,          "graphics\\icons"},
+            {Folder.GraphicsEnities,        "graphics\\entities"},
+            {Folder.GraphicsTechnologies,   "graphics\\technology"},
+            {Folder.Locale,                 "locale"},
+            {Folder.Migrations,             "migrations"},
+            {Folder.Prototypes,             "prototypes"},
+            {Folder.PrototypesItems,        "prototypes\\items"},
+            {Folder.PrototypesEntities,     "prototypes\\entities"},
+            {Folder.PrototypesTechnologies, "prototypes\\technologies"},
+            {Folder.PrototypesFluids,       "prototypes\\fluids"},
+            {Folder.PrototypesRecipes,      "prototypes\\recipes"},
         };
     }
 }
