@@ -4,24 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModAssemblerLib.DataClasses
+namespace ModAssemblerLib
 {
     public static class FolderDefination
     {
         public enum Folder
         {
-            Graphics,
-            GraphicsIcons,
-            GraphicsEnities,
-            GraphicsTechnologies,
-            Locale,
-            Migrations,
-            Prototypes,
-            PrototypesItems,
-            PrototypesEntities,
-            PrototypesTechnologies,
-            PrototypesRecipes,
-            PrototypesFluids,
+            Graphics, GraphicsIcons, GraphicsEnities, GraphicsTechnologies,
+            Locale, Migrations, Prototypes, PrototypesItems,PrototypesEntities,
+            PrototypesTechnologies, PrototypesRecipes, PrototypesFluids,
         }
 
         public static readonly Dictionary<Folder, string> Folders = new Dictionary<Folder, string>() {
