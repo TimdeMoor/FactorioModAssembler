@@ -8,13 +8,13 @@ namespace ModAssemblerLib.DataClasses
 {
     public class ColorSpecification
     {
-        public int r = 0;
-        public int g = 0;
-        public int b = 0;
-        public int a = 0;
+        public float r = 0;
+        public float g = 0;
+        public float b = 0;
+        public float a = 0;
 
         public ColorSpecification() { }
-        public ColorSpecification(int r, int g, int b, int a)
+        public ColorSpecification(float r, float g, float b, float a)
         {
             this.r = r;
             this.g = g;
@@ -26,7 +26,7 @@ namespace ModAssemblerLib.DataClasses
         {
             return
             $$"""
-            {{{r}},{{g}},{{b}},{{a}}}
+            {r={{r}}, g={{g}}, b={{b}}, a={{a}}}
             """;
         }
     }

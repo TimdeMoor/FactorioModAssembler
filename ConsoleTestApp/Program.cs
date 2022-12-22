@@ -34,6 +34,18 @@ namespace ConsoleTestApp
                 }
             };
 
+            Fluid testFluid = new Fluid()
+            {
+                Name = "TestFluid",
+                DefaultTemperature = 15,
+                BaseColor = new ColorSpecification(1f, 0f, 0f, 1f),
+                FlowColor = new ColorSpecification(1f, 0.2f, 0.2f, 1f),
+                MaxTemperature = 100,
+                Order = "a",
+                Type = PrototypeDefinition.Fluid,
+                Icon = icon,
+            };
+
             Console.WriteLine(infoFile.ToString());
 
             ModBuilder builder = new ModBuilder(testPath, "Arcanio");
@@ -48,6 +60,8 @@ namespace ConsoleTestApp
             Console.WriteLine(FolderDefination.Folders.GetValueOrDefault(FolderDefination.Folder.Prototypes));
             Console.WriteLine(FolderDefination.Folders.GetValueOrDefault(FolderDefination.Folder.PrototypesFluids));
             Console.WriteLine(FolderDefination.Folders.GetValueOrDefault(FolderDefination.Folder.GraphicsIcons));
+
+            Console.WriteLine(testFluid);
 
             Console.ReadLine();
         }

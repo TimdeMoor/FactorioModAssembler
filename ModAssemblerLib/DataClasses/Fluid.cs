@@ -10,15 +10,36 @@ namespace ModAssemblerLib.DataClasses
     {
         public ColorSpecification BaseColor { get; set; }
         public ColorSpecification FlowColor { get; set; }
-        public int Temperature { get; set; }
+        public int DefaultTemperature { get; set; }
+        public int MaxTemperature { get; set; }
         public IconSpecificaction Icon { get; set; }
 
-        public Fluid(ColorSpecification baseColor, ColorSpecification flowColor, int temperature, IconSpecificaction icon)
+        public Fluid(ColorSpecification baseColor, ColorSpecification flowColor, int temperature, IconSpecificaction icon, int maxTemperature)
         {
             BaseColor = baseColor;
             FlowColor = flowColor;
-            Temperature = temperature;
+            DefaultTemperature = temperature;
             Icon = icon;
+            MaxTemperature = maxTemperature;
+        }
+
+        public Fluid()
+        {
+        }
+
+        public override string ToString()
+        {
+            return 
+                $$"""
+                {
+                    {{base.ToString()}},
+                    {{Icon.ToString()}},
+                    base_color = "{{BaseColor.ToString()}}",
+                    flow_color = "{{FlowColor.ToString()}}",
+                    default_temperature = "{{DefaultTemperature.ToString()}}",
+                    max_temperature = "{{MaxTemperature}}",
+                }
+                """;
         }
     }
 }
