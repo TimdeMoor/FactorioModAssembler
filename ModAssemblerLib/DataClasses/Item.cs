@@ -16,6 +16,16 @@
             SubGroup = subGroup;
         }
 
+        public Item(string input)
+        {
+            Name = Importer.ExtractValue(input, "name");
+            Type = PrototypeDefinition.Item;
+            Order = Importer.ExtractValue(input, "order");
+            //Icon = Importer.ExtractValue(input, "icon");
+            //StackSize = Importer.ExtractValue(input, "stack_size");
+            //SubGroup = Importer.ExtractValue(input, "subgroup");
+        }
+
         public override string ToString()
         {
             return $$"""

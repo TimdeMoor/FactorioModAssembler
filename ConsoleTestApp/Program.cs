@@ -1,5 +1,6 @@
 ﻿using ModAssemblerLib;
 using ModAssemblerLib.DataClasses;
+using System.Text.RegularExpressions;
 
 namespace ConsoleTestApp
 {
@@ -62,6 +63,34 @@ namespace ConsoleTestApp
             Console.WriteLine(FolderDefination.Folders.GetValueOrDefault(FolderDefination.Folder.GraphicsIcons));
 
             Console.WriteLine(testFluid);
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+
+            string testString = 
+                $$$"""
+                        data:extend({{
+                        type = "item",
+                        name = "item-crusher",
+                        icon = "__arcanio__/graphics/test.png",
+                        icon_size = 32,
+                        subgroup = "arcanio-processing",
+                        order = "a",
+                        place_result = "entity-crusher",
+                        stack_size = 50,
+                    }})
+                """;
+
+            //string testSub = testString.Substring(testString.IndexOf("subgroup") + 12);
+            //Console.WriteLine(testSub);
+
+            string a = Importer.ExtractValue(testString, "order");
+            string iconstring = Importer.ExtractValue(testString, "icon");
+            string shouldbenull = Importer.ExtractValue(testString, "kaas");
+
+
+            
 
             Console.ReadLine();
         }
