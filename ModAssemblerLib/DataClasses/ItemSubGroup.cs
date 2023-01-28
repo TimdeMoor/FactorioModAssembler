@@ -19,6 +19,10 @@ namespace ModAssemblerLib.DataClasses
             Group = subGroup;
         }
 
+        public ItemSubGroup()
+        {
+        }
+
         public override string ToString()
         {
             return 

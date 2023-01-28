@@ -20,17 +20,17 @@ namespace ModAssemblerLib
             SaveLocation = $"{ModFolderRootPath}\\{ModName}\\";
         }
 
-        public void BuildEmptyModFolder()
+        private void BuildEmptyModFolder()
         {
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.Graphics);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.Locale);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.Prototypes);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.ItemPrototypes);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.Migrations);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.EntityPrototypes);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.TechnologyPrototypes);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.FluidPrototypes);
-        //    EnsureDirectoryExists(SaveLocation + FolderDefination.RecipePrototypes);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.Graphics]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.Locale]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.Prototypes]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesItems]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.Migrations]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesEntities]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesTechnologies]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesFluids]);
+            EnsureDirectoryExists(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesRecipes]);
         }
 
         private void EnsureDirectoryExists(string path)
@@ -40,9 +40,14 @@ namespace ModAssemblerLib
             }
         }
 
-        public void BuildFolder(string folderDefinationString)
+        public void BuildModDirectory()
         {
-
+            BuildEmptyModFolder();
+            Exporter.ExportItems(SaveLocation);
+            Exporter.ExportFluids(SaveLocation);
+            Exporter.ExportItemGroups(SaveLocation);
+            Exporter.ExportItemSubGroups(SaveLocation);
+            Exporter.ExportTechnologies(SaveLocation);
         }
     }
 }
