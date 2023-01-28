@@ -21,7 +21,7 @@
             Name = Importer.ExtractValue(input, "name");
             Type = PrototypeDefinition.Item;
             Order = Importer.ExtractValue(input, "order");
-            //Icon = Importer.ExtractValue(input, "icon");
+            //Icon = Data.Icons.FirstOrDefault(x => x.Key == )
             //StackSize = Importer.ExtractValue(input, "stack_size");
             //SubGroup = Importer.ExtractValue(input, "subgroup");
         }
