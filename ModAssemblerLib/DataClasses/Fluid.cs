@@ -23,9 +23,23 @@ namespace ModAssemblerLib.DataClasses
             MaxTemperature = maxTemperature;
         }
 
-        public Fluid()
+        public Fluid(string input)
         {
+            string sani = Importer.SanitizeInput(input, new List<string>() { "\r", "data:extend", "{", "}","\"", "(", ")"," "}, true);
+            string[] splittedInput = sani.Split("\n");
+
+            for (int i = 0; i < splittedInput.Length; i++)
+            {
+                splittedInput[i] = splittedInput[i].Trim();
+            }
+            
+            Name = Importer.ExtractValue(input, "name");
+            Type = PrototypeDefinition.Fluid;
+            Order = Importer.ExtractValue(input, "order");
+            
         }
+
+        public Fluid(){ }
 
         public override string ToString()
         {

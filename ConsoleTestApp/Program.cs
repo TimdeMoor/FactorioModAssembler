@@ -1,5 +1,6 @@
 ﻿using ModAssemblerLib;
 using ModAssemblerLib.DataClasses;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace ConsoleTestApp
@@ -89,8 +90,12 @@ namespace ConsoleTestApp
             string iconstring = Importer.ExtractValue(testString, "icon");
             string shouldbenull = Importer.ExtractValue(testString, "kaas");
 
+            Data.Fluids.Add(testFluid.Name, testFluid);
 
-            
+            Fluid f2 = Data.Fluids.FirstOrDefault(x => x.Key == testFluid.Name).Value;
+
+            Console.WriteLine(testFluid);
+            Console.WriteLine(f2);
 
             Console.ReadLine();
         }

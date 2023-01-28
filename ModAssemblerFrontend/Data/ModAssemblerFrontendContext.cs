@@ -13,7 +13,5 @@ namespace ModAssemblerFrontend.Data
             : base(options)
         {
         }
-
-        public DbSet<ModAssemblerFrontend.Models.TestViewModel> TestViewModel { get; set; } = default!;
     }
 }

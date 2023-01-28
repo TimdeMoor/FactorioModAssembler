@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModAssemblerLib", "ModAssem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTestApp", "ConsoleTestApp\ConsoleTestApp.csproj", "{0C280A3D-323F-459A-BB7E-F5E0315ABA21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModAssemblerFrontend", "ModAssemblerFrontend\ModAssemblerFrontend.csproj", "{34A208BB-6EE0-4B5A-956E-ED10AF502F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModAssemblerFrontend", "ModAssemblerFrontend\ModAssemblerFrontend.csproj", "{34A208BB-6EE0-4B5A-956E-ED10AF502F37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
