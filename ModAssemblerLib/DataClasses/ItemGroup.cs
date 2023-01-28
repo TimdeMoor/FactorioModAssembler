@@ -18,6 +18,10 @@ namespace ModAssemblerLib.DataClasses
             Icon = icon;
         }
 
+        public ItemGroup()
+        {
+        }
+
         public override string ToString()
         {
             return 

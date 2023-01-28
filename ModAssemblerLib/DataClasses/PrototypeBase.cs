@@ -17,8 +17,8 @@ namespace ModAssemblerLib.DataClasses
         {
             return
             $$"""
-            name = "{{Name}}",
             type = "{{Type}}",
+            name = "{{Name}}",
             order = "{{Order}}"
             """;
         }

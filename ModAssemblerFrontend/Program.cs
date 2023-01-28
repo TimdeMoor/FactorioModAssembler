@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ModAssemblerFrontend.Data;
+//using ModAssemblerFrontend.Data;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ModAssemblerFrontendContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ModAssemblerFrontendContext") ?? throw new InvalidOperationException("Connection string 'ModAssemblerFrontendContext' not found.")));
+//builder.Services.AddDbContext<ModAssemblerFrontendContext>(options =>
+    //options.UseSqlServer(builder.Configuration.GetConnectionString("ModAssemblerFrontendContext") ?? throw new InvalidOperationException("Connection string 'ModAssemblerFrontendContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
