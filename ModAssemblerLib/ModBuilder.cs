@@ -43,11 +43,12 @@ namespace ModAssemblerLib
         public void BuildModDirectory()
         {
             BuildEmptyModFolder();
-            Exporter.ExportItems(SaveLocation);
-            Exporter.ExportFluids(SaveLocation);
-            Exporter.ExportItemGroups(SaveLocation);
-            Exporter.ExportItemSubGroups(SaveLocation);
-            Exporter.ExportTechnologies(SaveLocation);
+            //TODO: Fix
+            //Exporter.ExportItems(SaveLocation);
+            //Exporter.ExportFluids(SaveLocation);
+            //Exporter.ExportItemGroups(SaveLocation);
+            //Exporter.ExportItemSubGroups(SaveLocation);
+            //Exporter.ExportTechnologies(SaveLocation);
         }
     }
 }

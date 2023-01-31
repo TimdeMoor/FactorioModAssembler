@@ -20,6 +20,26 @@ namespace ModAssemblerLib.DataClasses
 
         public InfoFile() { }
 
+        public InfoFile(string input)
+        {
+            Name = Importer.ExtractValue(input, "name");
+            Version = Importer.ExtractValue(input, "version");
+            FactorioVersion = Importer.ExtractValue(input, "factorio_version");
+            Title = Importer.ExtractValue(input, "title");
+            Author = Importer.ExtractValue(input, "author");
+            Contact = Importer.ExtractValue(input, "contact");
+            Homepage = Importer.ExtractValue(input, "homepage");
+            Description = Importer.ExtractValue(input, "description");
+
+            Dependencies = new List<InfoFileDependency>();
+            string[] dependencyStrings = Importer.ExtractArray(input, "dependencies");
+
+            foreach (string s in dependencyStrings)
+            {
+                Dependencies.Add(new InfoFileDependency(s));
+            }
+        }
+
         public InfoFile(string name, string version, string factorioVersion, string title, string author, string contact, string homepage, List<InfoFileDependency> dependencies, string description)
         {
             Name = name;
@@ -35,6 +55,11 @@ namespace ModAssemblerLib.DataClasses
 
         private string DependencyListToString()
         {
+            if (Dependencies == null)
+                return "";
+            if (Dependencies.Count == 0)
+                return "";
+
             StringBuilder sb = new();
             foreach (var d in Dependencies)
             {
@@ -57,7 +82,7 @@ namespace ModAssemblerLib.DataClasses
                 "homepage": "{{Homepage}}",
                 "dependencies": [
                 {{DependencyListToString()}}
-                ]
+                ],
                 "description": "{{Description}}"
             }
             """;
@@ -75,10 +100,16 @@ namespace ModAssemblerLib.DataClasses
             ModVersion = modVersion;
         }
 
+        public InfoFileDependency(string input)
+        {
+            string[] split = input.Split(" >= ");
+            ModName = split[0];
+            ModVersion = split[1];
+        }
 
         public override string ToString()
         {
-            return $$""" "{{ModName}} >= {{ModVersion}}" """;
+            return $$""""{{ModName}} >= {{ModVersion}}"""";
         }
     }
 }

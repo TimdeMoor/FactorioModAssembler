@@ -25,8 +25,7 @@ namespace ModAssemblerLib.DataClasses
 
         public Fluid(string input)
         {
-            string sani = Importer.SanitizeInput(input, new List<string>() { "\r", "data:extend", "{", "}","\"", "(", ")"," "}, true);
-            string[] splittedInput = sani.Split("\n");
+            string[] splittedInput = Importer.SanitizeInput(input, Constants.IMPORTFILTERS, true).Split("\n");
 
             for (int i = 0; i < splittedInput.Length; i++)
             {

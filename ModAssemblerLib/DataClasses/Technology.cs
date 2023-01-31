@@ -11,7 +11,7 @@ namespace ModAssemblerLib.DataClasses
         public IconSpecificaction Icon { get; set; }
         public TechnologyUnitSpecification Unit { get; set; }
         public List<TechnologyEffect> Effects { get; set; }
-        public List<Technology> Prerequisites { get; set; }
+        public List<Technology>? Prerequisites { get; set; }
 
         public override string ToString()
         {

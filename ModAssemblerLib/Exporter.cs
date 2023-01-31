@@ -21,7 +21,5 @@ namespace ModAssemblerLib
                 item.Value.ToString();
             }
         }
-
-
     }
 }

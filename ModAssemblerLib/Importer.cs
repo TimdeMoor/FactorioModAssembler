@@ -17,7 +17,7 @@ namespace ModAssemblerLib
             int index = 0;
             foreach (string s in split)
             {
-                split[index] = SanitizeInput(s);
+                split[index] = SanitizeInput(s, Constants.IMPORTFILTERS);
 
                 if (split[index].StartsWith(key))
                 {
@@ -57,18 +57,6 @@ namespace ModAssemblerLib
                 Type = PrototypeDefinition.ItemSubGroup,
                 Group = ExtractItemGroup(input),
             };
-        public static string SanitizeInput(string input)
-        {
-            return input.Replace("\r", string.Empty)
-                        .Replace("\n", string.Empty)
-                        .Replace("\t", string.Empty)
-                        .Replace("\"", string.Empty)
-                        .Replace("data:extend", string.Empty)
-                        .Replace("(", string.Empty)
-                        .Replace(")", string.Empty)
-                        .Replace("{", string.Empty)
-                        .Replace("}", string.Empty)
-                        .Trim();
         }
 
         public static string SanitizeInput(string input, List<string> filters, bool trim = true)
@@ -84,6 +72,32 @@ namespace ModAssemblerLib
                 }
             }
             return tempInput;
+        }
+
+        public static string[] ExtractArray(string input, string key)
+        {
+            List<string> output = new List<string>();
+
+            string value = ExtractValueBetweenCharacters(input, "[", "]");
+            string[] split = value.Split("\t");
+            
+            foreach (string s in split)
+            {
+                string temp = SanitizeInput(s, Constants.IMPORTFILTERS, true);
+                if(temp != "")
+                {
+                    output.Add(temp);
+                }
+            }
+            
+            return output.ToArray();
+        }
+
+        public static string ExtractValueBetweenCharacters(string input, string startChar, string endChar)
+        {
+            string[] split = input.Split(startChar[0]);
+            string[] split2 = split[1].Split(endChar[0]);
+            return split2[0];
         }
     }
 }

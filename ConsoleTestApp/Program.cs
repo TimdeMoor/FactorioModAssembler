@@ -14,7 +14,7 @@ namespace ConsoleTestApp
             ItemSubGroup subGroup = new ItemSubGroup("TestItemSubGroup", "a", group);
             Item item = new Item("TestItem", icon, "a", 50, subGroup);
 
-            string testPath = "C:\\Users\\timde\\source\\repos\\ModAssembler\\ConsoleTestApp\\testfolder";
+            string testPath = "C:\\Users\\gebruiker\\source\\repos\\ModAssembler\\ConsoleTestApp\\testfolder";
             string fileName = "Test";
             string fileExtension = ".lua";
 
@@ -51,7 +51,7 @@ namespace ConsoleTestApp
             Console.WriteLine(infoFile.ToString());
 
             ModBuilder builder = new ModBuilder(testPath, "Arcanio");
-            builder.BuildEmptyModFolder();
+            builder.BuildModDirectory();
             //builder.BuildItems();
             //builder.BuildTechnology();
 
@@ -96,6 +96,10 @@ namespace ConsoleTestApp
 
             Console.WriteLine(testFluid);
             Console.WriteLine(f2);
+
+            InfoFile if2 = new InfoFile(infoFile.ToString());
+            Console.WriteLine($"{if2}");
+
 
             Console.ReadLine();
         }

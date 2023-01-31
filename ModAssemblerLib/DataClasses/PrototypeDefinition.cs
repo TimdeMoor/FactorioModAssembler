@@ -12,5 +12,6 @@ namespace ModAssemblerLib.DataClasses
         public const string ItemGroup = "item-group";
         public const string ItemSubGroup = "item-subgroup";
         public const string Fluid = "fluid";
+        public const string Technology = "technology";
     }
 }
