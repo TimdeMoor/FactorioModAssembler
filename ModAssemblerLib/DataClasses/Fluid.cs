@@ -12,9 +12,9 @@ namespace ModAssemblerLib.DataClasses
         public ColorSpecification FlowColor { get; set; }
         public int DefaultTemperature { get; set; }
         public int MaxTemperature { get; set; }
-        public IconSpecificaction Icon { get; set; }
+        public Icon Icon { get; set; }
 
-        public Fluid(ColorSpecification baseColor, ColorSpecification flowColor, int temperature, IconSpecificaction icon, int maxTemperature)
+        public Fluid(ColorSpecification baseColor, ColorSpecification flowColor, int temperature, Icon icon, int maxTemperature)
         {
             BaseColor = baseColor;
             FlowColor = flowColor;

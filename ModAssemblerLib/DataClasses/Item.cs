@@ -2,18 +2,18 @@
 {
     public class Item : PrototypeBase
     {
-        public IconSpecificaction Icon { get; set; }
+        public Icon Icon { get; set; }
         public int StackSize { get; set; } = 50;
-        public ItemSubGroup SubGroup { get; set; }
+        public ItemSubGroup ItemSubGroup { get; set; }
 
-        public Item(string name, IconSpecificaction icon, string order, int stackSize, ItemSubGroup subGroup)
+        public Item(string name, Icon icon, string order, int stackSize, ItemSubGroup subGroup)
         {
             Name = name;
             Type = PrototypeDefinition.Item;
             Order = order;
             Icon = icon;
             StackSize = stackSize;
-            SubGroup = subGroup;
+            ItemSubGroup = subGroup;
         }
 
         public Item(string input)
@@ -22,9 +22,11 @@
             Type = PrototypeDefinition.Item;
             Order = Importer.ExtractValue(input, "order");
             //Icon = Data.Icons.FirstOrDefault(x => x.Key == )
-            //StackSize = Importer.ExtractValue(input, "stack_size");
-            //SubGroup = Importer.ExtractValue(input, "subgroup");
+            StackSize = int.Parse(Importer.ExtractValue(input, "stack_size"));
+            ItemSubGroup = Data.GetItemSubGroupByName(Importer.ExtractValue(input, "name"));
         }
+
+        public Item() { }
 
         public override string ToString()
         {
@@ -32,7 +34,7 @@
             {
             {{base.ToString()}},
             {{Icon.ToString()}},
-            subgroup = "{{SubGroup.Name}}",
+            subgroup = "{{ItemSubGroup.Name}}",
             place_result = {TODO},
             stack_size = {{StackSize}},
             },

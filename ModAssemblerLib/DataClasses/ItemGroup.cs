@@ -8,9 +8,9 @@ namespace ModAssemblerLib.DataClasses
 {
     public class ItemGroup : PrototypeBase
     {
-        public IconSpecificaction Icon { get; set; }
+        public Icon Icon { get; set; }
 
-        public ItemGroup(string name, string order, IconSpecificaction icon)
+        public ItemGroup(string name, string order, Icon icon)
         {
             Name = name;
             Type = PrototypeDefinition.ItemGroup;
@@ -18,9 +18,15 @@ namespace ModAssemblerLib.DataClasses
             Icon = icon;
         }
 
-        public ItemGroup()
+        public ItemGroup(string input)
         {
+            Name = Importer.ExtractValue(input, "name");
+            Type = PrototypeDefinition.ItemGroup;
+            Order = Importer.ExtractValue(input, "order");
+            Icon = Importer.ExtractIcon(input);
         }
+
+        public ItemGroup(){}
 
         public override string ToString()
         {

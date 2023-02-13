@@ -8,7 +8,7 @@ namespace ModAssemblerLib.DataClasses
 {
     public class Technology : PrototypeBase
     {
-        public IconSpecificaction Icon { get; set; }
+        public Icon Icon { get; set; }
         public TechnologyUnitSpecification Unit { get; set; }
         public List<TechnologyEffect> Effects { get; set; }
         public List<Technology>? Prerequisites { get; set; }

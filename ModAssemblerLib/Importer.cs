@@ -28,9 +28,9 @@ namespace ModAssemblerLib
             return "NULL";
         }
 
-        public static IconSpecificaction ExtractIcon(string input)
+        public static Icon ExtractIcon(string input)
         {
-            return new IconSpecificaction()
+            return new Icon()
             {
                 IconPath = ExtractValue(input, "icon"),
                 IconSize = (int)Convert.ToInt64(ExtractValue(input, "icon_size")),

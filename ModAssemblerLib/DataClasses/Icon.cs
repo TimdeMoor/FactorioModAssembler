@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ModAssemblerLib.DataClasses
 {
-    public class IconSpecificaction
+    public class Icon
     {
         public int IconSize { get; set; } = 32;
         public string IconPath { get; set; } = string.Empty;
 
-        public IconSpecificaction(int iconSize, string iconPath)
+        public Icon(int iconSize, string iconPath)
         {
             IconSize = iconSize;
             IconPath = iconPath;
         }
 
-        public IconSpecificaction()
+        public Icon()
         {
         }
 
@@ -26,7 +26,7 @@ namespace ModAssemblerLib.DataClasses
             return 
             $$"""
             icon = "{{IconPath}}",
-            icon_size = "{{IconSize}}"
+                icon_size = "{{IconSize}}"
             """;
         }
     }
