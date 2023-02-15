@@ -16,18 +16,18 @@ namespace ModAssemblerLib
         }
 
         public static readonly Dictionary<Folder, string> Folders = new Dictionary<Folder, string>() {
-            {Folder.Graphics,               "graphics"},
-            {Folder.GraphicsIcons,          "graphics\\icons"},
-            {Folder.GraphicsEnities,        "graphics\\entities"},
-            {Folder.GraphicsTechnologies,   "graphics\\technology"},
-            {Folder.Locale,                 "locale"},
-            {Folder.Migrations,             "migrations"},
-            {Folder.Prototypes,             "prototypes"},
-            {Folder.PrototypesItems,        "prototypes\\items"},
-            {Folder.PrototypesEntities,     "prototypes\\entities"},
-            {Folder.PrototypesTechnologies, "prototypes\\technologies"},
-            {Folder.PrototypesFluids,       "prototypes\\fluids"},
-            {Folder.PrototypesRecipes,      "prototypes\\recipes"},
+            {Folder.Graphics,               "\\graphics"},
+            {Folder.GraphicsIcons,          "\\graphics\\icons"},
+            {Folder.GraphicsEnities,        "\\graphics\\entities"},
+            {Folder.GraphicsTechnologies,   "\\graphics\\technology"},
+            {Folder.Locale,                 "\\locale"},
+            {Folder.Migrations,             "\\migrations"},
+            {Folder.Prototypes,             "\\prototypes"},
+            {Folder.PrototypesItems,        "\\prototypes\\items"},
+            {Folder.PrototypesEntities,     "\\prototypes\\entities"},
+            {Folder.PrototypesTechnologies, "\\prototypes\\technologies"},
+            {Folder.PrototypesFluids,       "\\prototypes\\fluids"},
+            {Folder.PrototypesRecipes,      "\\prototypes\\recipes"},
         };
     }
 }

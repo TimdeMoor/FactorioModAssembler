@@ -17,7 +17,7 @@ namespace ModAssemblerLib
         {
             ModFolderRootPath = modFolderRootPath;
             ModName = modName;
-            SaveLocation = $"{ModFolderRootPath}\\{ModName}\\";
+            SaveLocation = $"{ModFolderRootPath}\\{ModName}";
         }
 
         private void BuildEmptyModFolder()
@@ -43,12 +43,7 @@ namespace ModAssemblerLib
         public void BuildModDirectory()
         {
             BuildEmptyModFolder();
-            //TODO: Fix
-            //Exporter.ExportItems(SaveLocation);
-            //Exporter.ExportFluids(SaveLocation);
-            //Exporter.ExportItemGroups(SaveLocation);
-            //Exporter.ExportItemSubGroups(SaveLocation);
-            //Exporter.ExportTechnologies(SaveLocation);
+            Exporter.exportItemGroups(SaveLocation);
         }
     }
 }

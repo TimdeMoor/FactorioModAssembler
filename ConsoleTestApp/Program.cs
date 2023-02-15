@@ -45,6 +45,22 @@ namespace ConsoleTestApp
             Console.WriteLine(TestData.TestFluid);
             Console.WriteLine(f2);
 
+            Console.WriteLine("===================================================");
+            Console.WriteLine(Data.Add(TestData.TestItem));
+            Console.WriteLine(Data.Add(TestData.TestItem));
+            Console.WriteLine(Data.Add(TestData.TestFluid));
+            Console.WriteLine(Data.Add(TestData.TestFluid));
+            Console.WriteLine("===================================================");
+
+
+            Data.Add(new ItemGroup("itemgroup1", "a", TestData.TestIcon));
+            Data.Add(new ItemGroup("itemgroup2", "b", TestData.TestIcon));
+            Data.Add(new ItemGroup("itemgroup3", "c", TestData.TestIcon));
+            Data.Add(new ItemGroup("itemgroup4", "d", TestData.TestIcon));
+            Data.Add(new ItemGroup("itemgroup5", "e", TestData.TestIcon));
+
+            builder.BuildModDirectory();
+
             Console.ReadLine();
         }
     }
