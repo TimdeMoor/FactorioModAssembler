@@ -32,7 +32,7 @@ namespace ModAssemblerLib
         {
             return new Icon()
             {
-                IconPath = ExtractValue(input, "icon"),
+                LocalPath = ExtractValue(input, "icon"),
                 IconSize = (int)Convert.ToInt64(ExtractValue(input, "icon_size")),
             };
         }

@@ -44,6 +44,8 @@ namespace ModAssemblerLib
         {
             BuildEmptyModFolder();
             Exporter.exportItemGroups(SaveLocation);
+            Exporter.exportItemSubGroups(SaveLocation);
+            Exporter.exportFluids(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesFluids]);
         }
     }
 }

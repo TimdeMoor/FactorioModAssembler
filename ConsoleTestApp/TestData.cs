@@ -1,4 +1,5 @@
-﻿using ModAssemblerLib.DataClasses;
+﻿using ModAssemblerLib;
+using ModAssemblerLib.DataClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace ConsoleTestApp
         public static Icon TestIcon = new()
         {
             IconSize = 32,
-            IconPath = "__TESTMOD__/Something/anotherthing",
+            LocalPath = $"__Arcanio__/graphics/icons",
         };
 
         public static ItemGroup TestItemGroup = new()
@@ -60,7 +61,6 @@ namespace ConsoleTestApp
             Type = PrototypeDefinition.Item,
         };
 
-        //Item item = new Item("TestItem", icon, "a", 50, subGroup);
         public static Item TestItem = new()
         {
             Name = "Item",

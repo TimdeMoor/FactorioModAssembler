@@ -59,6 +59,24 @@ namespace ConsoleTestApp
             Data.Add(new ItemGroup("itemgroup4", "d", TestData.TestIcon));
             Data.Add(new ItemGroup("itemgroup5", "e", TestData.TestIcon));
 
+            Data.Add(new ItemSubGroup("subgroup1", "aa", Data.GetItemGroupByName("itemgroup1")));
+            Data.Add(new ItemSubGroup("subgroup2", "aa", Data.GetItemGroupByName("itemgroup1")));
+            Data.Add(new ItemSubGroup("subgroup3", "aa", Data.GetItemGroupByName("itemgroup2")));
+            Data.Add(new ItemSubGroup("subgroup4", "aa", Data.GetItemGroupByName("itemgroup3")));
+            Data.Add(new ItemSubGroup("subgroup5", "aa", Data.GetItemGroupByName("itemgroup1")));
+
+            Data.Add(new Fluid()
+            {
+                Type = PrototypeDefinition.Fluid,
+                DefaultTemperature = 25,
+                BaseColor = new ColorSpecification(1,0,0,1),
+                FlowColor = new ColorSpecification(1,0,0,1),
+                Icon = TestData.TestIcon,
+                MaxTemperature = 5000,
+                Name = "lava",
+                Order = "l",
+            });
+
             builder.BuildModDirectory();
 
             Console.ReadLine();

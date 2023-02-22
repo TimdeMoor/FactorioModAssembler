@@ -9,12 +9,12 @@ namespace ModAssemblerLib.DataClasses
     public class Icon
     {
         public int IconSize { get; set; } = 32;
-        public string IconPath { get; set; } = string.Empty;
+        public string LocalPath { get; set; } = string.Empty;
 
         public Icon(int iconSize, string iconPath)
         {
             IconSize = iconSize;
-            IconPath = iconPath;
+            LocalPath = iconPath;
         }
 
         public Icon()
@@ -25,7 +25,7 @@ namespace ModAssemblerLib.DataClasses
         {
             return 
             $$"""
-            icon = "{{IconPath}}",
+            icon = "{{LocalPath}}",
                 icon_size = "{{IconSize}}"
             """;
         }

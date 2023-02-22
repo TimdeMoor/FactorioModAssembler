@@ -47,10 +47,10 @@ namespace ModAssemblerLib.DataClasses
                 {
                     {{base.ToString()}},
                     {{Icon.ToString()}},
-                    base_color = "{{BaseColor.ToString()}}",
-                    flow_color = "{{FlowColor.ToString()}}",
-                    default_temperature = "{{DefaultTemperature.ToString()}}",
-                    max_temperature = "{{MaxTemperature}}",
+                    base_color = {{BaseColor.ToString()}},
+                    flow_color = {{FlowColor.ToString()}},
+                    default_temperature = {{DefaultTemperature.ToString()}},
+                    max_temperature = {{MaxTemperature}},
                 }
                 """;
         }

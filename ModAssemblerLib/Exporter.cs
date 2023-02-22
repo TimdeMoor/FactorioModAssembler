@@ -14,27 +14,57 @@ namespace ModAssemblerLib
             
         }
 
-        public static void exportItems(string destinationPath)
-        {
-            foreach(KeyValuePair<string,Item> item in Data.Items)
-            {
-                FileWriter.WriteFile(destinationPath, item.Value.ToString());
-            }
-        }
-
         public static void exportItemGroups(string destinationPath)
         {
-            foreach(KeyValuePair<string, ItemGroup> itemGroup in Data.ItemGroups)
+            StringBuilder sb = new();
+            sb.AppendLine(Constants.GENERATEDSTRING);
+            sb.AppendLine(Constants.DATAEXTEND);
+            foreach (KeyValuePair<string, ItemGroup> itemGroup in Data.ItemGroups)
             {
-                FileWriter.WriteFile(destinationPath + itemGroup.Value.Name + ".lua", itemGroup.Value.ToString());
+                sb.AppendLine(itemGroup.Value.ToString());
+            }
+            sb.AppendLine("}})");
+            FileWriter.WriteFile(destinationPath + "\\item-groups.lua", sb.ToString());
+        }
+
+        public static void exportItemSubGroups(string destinationPath)
+        {
+            StringBuilder sb = new();
+            sb.AppendLine(Constants.GENERATEDSTRING);
+            sb.AppendLine(Constants.DATAEXTEND);
+            foreach (KeyValuePair<string, ItemSubGroup> itemSubGroup in Data.ItemSubGroups)
+            {
+                sb.AppendLine(itemSubGroup.Value.ToString());
+            }
+            sb.AppendLine("}})");
+            FileWriter.WriteFile(destinationPath + "\\item-subgroups.lua", sb.ToString());
+        }
+
+        public static void exportFluids(string destinationPath)
+        {
+            StringBuilder sb = new();
+            foreach (KeyValuePair<string, Fluid> fluid in Data.Fluids)
+            {
+                sb.Clear();
+                sb.AppendLine(Constants.GENERATEDSTRING);
+                sb.AppendLine(Constants.DATAEXTEND);
+                sb.AppendLine(fluid.Value.ToString());
+                sb.AppendLine("}})");
+                FileWriter.WriteFile(destinationPath + "\\" + fluid.Value.Name.ToLower() + ".lua", sb.ToString());
             }
         }
 
-        public static void exportItemSubGroup(string destinationPath)
+        public static void exportItems(string destinationPath)
         {
-            foreach(KeyValuePair<string, ItemSubGroup> itemSubGroup in Data.ItemSubGroups)
+            StringBuilder sb = new();
+            foreach (KeyValuePair<string, Item> item in Data.Items)
             {
-                FileWriter.WriteFile(destinationPath, itemSubGroup.Value.ToString());
+                sb.Clear();
+                sb.AppendLine(Constants.GENERATEDSTRING);
+                sb.AppendLine(Constants.DATAEXTEND);
+                sb.AppendLine(item.Value.ToString());
+                sb.AppendLine("}})");
+                FileWriter.WriteFile(destinationPath + "\\" + item.Value.Name.ToLower() + ".lua", sb.ToString());
             }
         }
     }

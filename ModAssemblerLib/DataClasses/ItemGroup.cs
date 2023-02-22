@@ -33,9 +33,9 @@ namespace ModAssemblerLib.DataClasses
             return 
             $$"""
             {
-            {{base.ToString()}},
-            {{Icon.ToString()}},
-            inventory_order = "{{Order}}",
+                {{base.ToString()}},
+                {{Icon.ToString()}},
+                inventory_order = "{{Order}}",
             },
             """;
         }

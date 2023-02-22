@@ -11,10 +11,11 @@ namespace ModAssemblerLib
     {
         public static void WriteFile(string path, string content)
         {
-            EnsureFileExists(path);
-            StreamWriter s = new(path);
-            s.Write(content);
-            s.Close();
+            File.WriteAllText(path, content);
+            //EnsureFileExists(path);
+            //StreamWriter s = new(path);
+            //s.Write(content);
+            //s.Close();
         }
 
 

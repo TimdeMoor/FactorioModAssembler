@@ -26,8 +26,8 @@ namespace ModAssemblerLib.DataClasses
             return 
             $$"""
             {
-            {{base.ToString()}},
-            group = "{{Group.Name}}",
+                {{base.ToString()}},
+                group = "{{Group.Name}}",
             },
             """;
         }
