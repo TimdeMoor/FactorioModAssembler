@@ -15,7 +15,7 @@ namespace ModAssemblerLib
             PrototypesTechnologies, PrototypesRecipes, PrototypesFluids,
         }
 
-        public static readonly Dictionary<Folder, string> Folders = new Dictionary<Folder, string>() {
+        public static readonly Dictionary<Folder, string> Folders = new() {
             {Folder.Graphics,               "\\graphics"},
             {Folder.GraphicsIcons,          "\\graphics\\icons"},
             {Folder.GraphicsEnities,        "\\graphics\\entities"},

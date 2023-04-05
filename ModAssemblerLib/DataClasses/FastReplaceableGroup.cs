@@ -8,33 +8,21 @@ namespace ModAssemblerLib.DataClasses
 {
     public static class FastReplaceableGroupDefination
     {
-        public enum FastReplaceableGroup
-        {
-            ConstantCombinator, Container, Furnace, TransportBelt,
-            ElectricPole, SteamEngine, Inserter, LongHandedInserter,
-            Pipe, AssemblingMachine, Wall, Loader, RailSignal,
-            LinkedBelts, MiningDrill, Pumpjack
-        }
-
-        public static readonly Dictionary<FastReplaceableGroup, string> FastReplaceableGroups = new()
-        {
-            {FastReplaceableGroup.ConstantCombinator, "constant-combinator"},
-            {FastReplaceableGroup.Container, "container"},
-            {FastReplaceableGroup.Furnace, "furnace"},
-            {FastReplaceableGroup.TransportBelt, "transport-belt"},
-            {FastReplaceableGroup.ElectricPole, "electric-pole"},
-            {FastReplaceableGroup.SteamEngine, "steam-engine"},
-            {FastReplaceableGroup.Inserter, "inserter"},
-            {FastReplaceableGroup.LongHandedInserter, "long-handed-inserter"},
-            {FastReplaceableGroup.Pipe, "pipe"},
-            {FastReplaceableGroup.AssemblingMachine, "assembling-machine"},
-            {FastReplaceableGroup.Wall, "wall"},
-            {FastReplaceableGroup.Loader, "loader"},
-            {FastReplaceableGroup.RailSignal, "rail-signal"},
-            {FastReplaceableGroup.LinkedBelts, "linked-belts"},
-            {FastReplaceableGroup.MiningDrill, "mining-drill"},
-            {FastReplaceableGroup.Pumpjack, "pumpjack"},
-
-        };
+        public const string ConstantCombinator = "constant-combinator";
+        public const string Container = "container";
+        public const string Furnace = "furnace";
+        public const string TransportBelt = "transport-belt";
+        public const string ElectricPole = "electric-pole";
+        public const string SteamEngine = "steam-engine";
+        public const string Inserter = "inserter";
+        public const string LongHandedInserter = "long-handed-inserter";
+        public const string Pipe = "pipe";
+        public const string AssemblingMachine = "assembling-machine";
+        public const string Wall = "wall";
+        public const string Loader = "loader";
+        public const string RailSignal = "rail-signal";
+        public const string LinkedBelts = "linked-belts";
+        public const string MiningDrill = "mining-drill";
+        public const string Pumpjack = "pumpjack";
     }
 }
