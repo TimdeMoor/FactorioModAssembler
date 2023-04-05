@@ -9,7 +9,7 @@ namespace ConsoleTestApp
     {
         private static void Main(string[] args)
         {
-            string testPath = "C:\\Users\\timde\\source\\repos\\ModAssembler\\ConsoleTestApp\\testfolder";
+            string testPath = "C:\\Users\\gebruiker\\source\\repos\\ModAssembler\\ConsoleTestApp\\testfolder";
             string fileName = "Test";
             string fileExtension = ".lua";
 

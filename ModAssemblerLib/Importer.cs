@@ -21,7 +21,11 @@ namespace ModAssemblerLib
 
                 if (split[index].StartsWith(key))
                 {
-                    return split[index].Substring(split[index].IndexOf(key) + key.Length).Replace("=", "").Trim();
+                    return split[index]
+                        .Substring(split[index]
+                        .IndexOf(key) + key.Length)
+                        .Replace("=", "")
+                        .Trim();
                 }
                 index++;
             }
