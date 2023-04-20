@@ -1,0 +1,35 @@
+﻿@using ModAssemblerLib.DataClasses;
+
+@page "/testpage"
+<h3>Known Icons</h3>
+
+<table>
+    <thead>
+        <tr>
+            <td>Icon</td>
+            <td>Size</td>
+            <td>Path</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Icon i in Icons)
+        {
+            <tr>
+                <td><img src="@i.LocalPath"/></td>
+                <td>@i.IconSize</td>
+                <td>@i.LocalPath</td>
+                <td><button>Details</button></td>
+                <td><button>Edit</button></td>
+                <td><button>Delete</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Icon> Icons = new List<Icon>() {
+        new Icon(32, "path"),
+        new Icon(64, "path2"),
+        new Icon(128, "path3")
+    };
+}
