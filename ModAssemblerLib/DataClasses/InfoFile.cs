@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,6 @@ namespace ModAssemblerLib.DataClasses
         public string Homepage { get; set; }
         public List<InfoFileDependency> Dependencies { get; set; }
         public string Description { get; set; }
-
-        public InfoFile() { }
 
         public InfoFile(string input)
         {
@@ -39,6 +38,8 @@ namespace ModAssemblerLib.DataClasses
                 Dependencies.Add(new InfoFileDependency(s));
             }
         }
+
+        public InfoFile() { }
 
         public InfoFile(string name, string version, string factorioVersion, string title, string author, string contact, string homepage, List<InfoFileDependency> dependencies, string description)
         {
@@ -86,30 +87,6 @@ namespace ModAssemblerLib.DataClasses
                 "description": "{{Description}}"
             }
             """;
-        }
-    }
-
-    public class InfoFileDependency
-    {
-        string ModName { get; set; }
-        string ModVersion { get; set; }
-
-        public InfoFileDependency(string modName, string modVersion)
-        {
-            ModName = modName;
-            ModVersion = modVersion;
-        }
-
-        public InfoFileDependency(string input)
-        {
-            string[] split = input.Split(" >= ");
-            ModName = split[0];
-            ModVersion = split[1];
-        }
-
-        public override string ToString()
-        {
-            return $$""""{{ModName}} >= {{ModVersion}}"""";
         }
     }
 }
