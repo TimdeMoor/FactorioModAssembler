@@ -9,7 +9,7 @@ namespace ModAssemblerLib.DataClasses
     public class Technology : PrototypeBase
     {
         public Icon Icon { get; set; }
-        public TechnologyUnitSpecification Unit { get; set; }
+        public TechnologyIngredient TechnologyIngredient { get; set; }
         public List<TechnologyEffect> Effects { get; set; }
         public List<Technology>? Prerequisites { get; set; }
 
@@ -22,7 +22,7 @@ namespace ModAssemblerLib.DataClasses
             name = "{{Name}}",
             {{Icon.ToString()}},
             effects = {{{Effects.ToString()}}},
-            unit = {{Unit.ToString()}},
+            unit = {{TechnologyIngredient.ToString()}},
             },
             """;
         }
@@ -37,10 +37,9 @@ namespace ModAssemblerLib.DataClasses
         }
     }
 
-    public class TechnologyUnitSpecification
+    public class TechnologyIngredient
     {
-        public int Count { get; set; }
-        public List<Item> Ingredients { get; set; }
+        public IngredientList IngredientList { get; set; }
         public int Time { get; set; }
     }
 
@@ -48,6 +47,10 @@ namespace ModAssemblerLib.DataClasses
     {
         public string Name { get; set; }
         public string ModifierPrototype { get; set; }
+
+        public TechnologyEffect()
+        {
+        }
 
         public override string ToString()
         {
@@ -59,11 +62,5 @@ namespace ModAssemblerLib.DataClasses
             }
             """;
         }
-    }
-
-    public static class ModifierPrototype
-    {
-        public const string InserterStackSizeBonus = "inserter-stack-size-bonus";
-        public const string UnlockRecipe = "unlock-recipe";
     }
 }

@@ -35,9 +35,9 @@ namespace ConsoleTestApp
             Title = "Creative Title...",
             Dependencies = new List<InfoFileDependency>()
                 {
-                    new InfoFileDependency("TestMod1", "1.0.0"),
-                    new InfoFileDependency("TestMod2", "0.0.1"),
-                    new InfoFileDependency("TestMod3", "1.0.1")
+                    new InfoFileDependency("TestMod1", "1.0.0", InfoFileDependency.InfoFileDependencyType.Required),
+                    new InfoFileDependency("TestMod2", "0.0.1", InfoFileDependency.InfoFileDependencyType.Optional),
+                    new InfoFileDependency("TestMod3", "1.0.1", InfoFileDependency.InfoFileDependencyType.Incompatible)
                 }
         };
 

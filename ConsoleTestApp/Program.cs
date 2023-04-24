@@ -79,7 +79,15 @@ namespace ConsoleTestApp
 
             builder.BuildModDirectory();
 
+
+            foreach(InfoFileDependency ifd in TestData.TestInfoFile.Dependencies)
+            {
+                Console.WriteLine(ifd);
+                InfoFileDependency test = new InfoFileDependency(ifd.ToString());
+                Console.WriteLine(test);
+            }
+
             Console.ReadLine();
-        }
+        }  
     }
 }
