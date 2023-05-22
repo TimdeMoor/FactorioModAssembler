@@ -69,5 +69,15 @@ namespace ConsoleTestApp
             StackSize = 50,
             ItemSubGroup = TestItemSubGroup,
         };
+
+        public static RecipeCategory TestRecipeCategory1 = new()
+        {
+            Name = "Category1",
+        };
+
+        public static RecipeCategory TestRecipeCategory2 = new()
+        {
+            Name = "Category2",
+        };
     }
 }

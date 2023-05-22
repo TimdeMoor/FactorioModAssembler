@@ -97,7 +97,7 @@ namespace ModAssemblerLib
             return output.ToArray();
         }
 
-        public static string ExtractValueBetweenCharacters(string input, string startChar, string endChar)
+        private static string ExtractValueBetweenCharacters(string input, string startChar, string endChar)
         {
             string[] split = input.Split(startChar[0]);
             string[] split2 = split[1].Split(endChar[0]);

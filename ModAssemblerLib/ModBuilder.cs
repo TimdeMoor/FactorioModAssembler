@@ -1,4 +1,5 @@
 ﻿using ModAssemblerLib.DataClasses;
+using ModAssemblerLib.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,7 @@ namespace ModAssemblerLib
             Exporter.exportItemGroups(SaveLocation);
             Exporter.exportItemSubGroups(SaveLocation);
             Exporter.exportFluids(SaveLocation + FolderDefination.Folders[FolderDefination.Folder.PrototypesFluids]);
+            Exporter.exportRecipeCategories(SaveLocation);
         }
     }
 }

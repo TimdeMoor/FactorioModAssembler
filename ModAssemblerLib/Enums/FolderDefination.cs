@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModAssemblerLib
+namespace ModAssemblerLib.Enums
 {
     public static class FolderDefination
     {
         public enum Folder
         {
             Graphics, GraphicsIcons, GraphicsEnities, GraphicsTechnologies,
-            Locale, Migrations, Prototypes, PrototypesItems,PrototypesEntities,
+            Locale, Migrations, Prototypes, PrototypesItems, PrototypesEntities,
             PrototypesTechnologies, PrototypesRecipes, PrototypesFluids,
         }
 

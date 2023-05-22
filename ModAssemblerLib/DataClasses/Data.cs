@@ -14,6 +14,7 @@ namespace ModAssemblerLib.DataClasses
         public static Dictionary<string, ItemGroup> ItemGroups = new();
         public static Dictionary<string, ItemSubGroup> ItemSubGroups = new();
         public static Dictionary<string, Technology> Technologies = new();
+        public static Dictionary<string, RecipeCategory> RecipeCategories = new();
 
         public static Item GetItemByName(string name)
         {
@@ -86,6 +87,21 @@ namespace ModAssemblerLib.DataClasses
             if (!Technologies.ContainsKey(technology.Name))
             {
                 Technologies.Add(technology.Name, technology);
+                return true;
+            }
+            return false;
+        }
+
+        public static RecipeCategory GetRecipeCategoryByName(string name)
+        {
+            return RecipeCategories.FirstOrDefault(x => x.Key == name).Value;
+        }
+
+        public static bool Add(RecipeCategory recipeCategory)
+        {
+            if (!RecipeCategories.ContainsKey(recipeCategory.Name))
+            {
+                RecipeCategories.Add(recipeCategory.Name, recipeCategory);
                 return true;
             }
             return false;

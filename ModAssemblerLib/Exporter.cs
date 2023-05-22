@@ -63,5 +63,18 @@ namespace ModAssemblerLib
                 FileWriter.WriteFile(destinationPath + "\\" + item.Value.Name.ToLower() + ".lua", sb.ToString());
             }
         }
+
+        public static void exportRecipeCategories(string destinationPath)
+        {
+            StringBuilder sb = new();
+            sb.AppendLine(Constants.GENERATEDSTRING);
+            sb.AppendLine(Constants.DATAEXTEND);
+            foreach (KeyValuePair<string, RecipeCategory> recipeCategories in Data.RecipeCategories)
+            {
+                sb.AppendLine(recipeCategories.Value.ToString());
+            }
+            sb.AppendLine("}})");
+            FileWriter.WriteFile(destinationPath + "\\recipe-categories.lua", sb.ToString());
+        }
     }
 }
