@@ -1,5 +1,6 @@
 ﻿using ModAssemblerLib;
 using ModAssemblerLib.DataClasses;
+using ModAssemblerLib.Enums;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -10,6 +11,7 @@ namespace ConsoleTestApp
         private static void Main(string[] args)
         {
             string testPath = "C:\\Users\\gebruiker\\source\\repos\\ModAssembler\\ConsoleTestApp\\testfolder";
+            string factorioDataDirectory = "C:\\UnityProjects\\FactorioModAssembler\\factorio-data";
             string fileName = "Test";
             string fileExtension = ".lua";
 
@@ -18,8 +20,8 @@ namespace ConsoleTestApp
             Console.WriteLine(TestData.TestInfoFile.ToString());
             Console.WriteLine("==================================================");
 
-            ModBuilder builder = new ModBuilder(testPath, "Arcanio");
-            builder.BuildModDirectory();
+            //ModBuilder builder = new ModBuilder(testPath, "Arcanio");
+            //builder.BuildModDirectory();
             //builder.BuildItems();
             //builder.BuildTechnology();
 
@@ -77,16 +79,7 @@ namespace ConsoleTestApp
                 Order = "l",
             });
 
-            builder.BuildModDirectory();
-
-
-            foreach(InfoFileDependency ifd in TestData.TestInfoFile.Dependencies)
-            {
-                Console.WriteLine(ifd);
-                InfoFileDependency test = new InfoFileDependency(ifd.ToString());
-                Console.WriteLine(test);
-            }
-
+            
             Console.ReadLine();
         }  
     }

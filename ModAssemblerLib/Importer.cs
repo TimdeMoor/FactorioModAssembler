@@ -11,6 +11,11 @@ namespace ModAssemblerLib
 {
     public static class Importer
     {
+        public static string GetFileContent(string filePath)
+        {
+            return File.ReadAllText(filePath);
+        }
+
         public static string ExtractValue(string input, string key)
         {
             string[] split = Regex.Split(input, @",");
