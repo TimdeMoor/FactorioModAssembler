@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <TabControl>
+            <TabItem Header="Main Tab 1">
+                <TabControl>
+                    <TabItem Header="Subtab 1">
+                        <TextBlock Text="Content of Subtab 1"/>
+                    </TabItem>
+                    <TabItem Header="Subtab 2">
+                        <Menu Height="20" VerticalAlignment="Top">
+                            <MenuItem Width="60" Height="20" Header="Kazen" HorizontalContentAlignment="Center">
+                                <Label Content="Jong"/>
+                                <Label Content="Oud"/>
+                                <Label Content="Belegen"/>
+                            </MenuItem>
+                            <MenuItem Width="60" Height="20" Header="Worsten" HorizontalContentAlignment="Center">
+                                <Button Content="Gelderse"/>
+                                <Button Content="Rookworst"/>
+                                <Button Content="Salami"/>
+                            </MenuItem>
+                        </Menu>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Main Tab 2">
+                <TextBlock Text="Content of Main Tab 2"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

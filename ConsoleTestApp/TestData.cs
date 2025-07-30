@@ -10,10 +10,12 @@ namespace ConsoleTestApp
 {
     public static class TestData
     {
+        public static string ModName = "TestModName";
+
         public static Icon TestIcon = new()
         {
             IconSize = 32,
-            LocalPath = $"__Arcanio__/graphics/icons",
+            LocalPath = $"__{ModName}__/graphics/icons",
         };
 
         public static ItemGroup TestItemGroup = new()
@@ -25,7 +27,7 @@ namespace ConsoleTestApp
 
         public static InfoFile TestInfoFile = new InfoFile()
         {
-            Name = "Testfile",
+            Name = $"{ModName}",
             Version = "1.1.0",
             FactorioVersion = "1.0",
             Author = "Microsoft Corp.",

@@ -20,8 +20,13 @@ namespace ConsoleTestApp
             Console.WriteLine(TestData.TestInfoFile.ToString());
             Console.WriteLine("==================================================");
 
-            //ModBuilder builder = new ModBuilder(testPath, "Arcanio");
-            //builder.BuildModDirectory();
+            Mod TestMod = new Mod()
+            {
+                Name = "TestModOmTeTesten",
+            };
+
+            ModBuilder builder = new ModBuilder(testPath, TestMod.Name);
+            builder.BuildModDirectory();
             //builder.BuildItems();
             //builder.BuildTechnology();
 
